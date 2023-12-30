@@ -8,10 +8,10 @@
 #ifndef MOVING_SHAPE_H
     #define MOVING_SHAPE_H
 
-#include <SFML/Graphics.hpp>
+    #include <SFML/Graphics.hpp>
 
 class MovingShape {
-public:
+    public:
     sf::CircleShape shape;
     sf::Vector2f velocity;
     sf::Vector2f acceleration;

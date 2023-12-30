@@ -7,22 +7,20 @@
 
 #include <iostream>
 #include <ostream>
+#include <algorithm>
 
-static bool str_is_num(char const *str) {
-    for (const char c : std::string_view(str)) {
-        if (c < '0' || c > '9') {
-            return false;
-        }
-    }
-    return true;
+static bool str_is_num(std::string_view str) {
+
+    return std::all_of(str.begin(), str.end(), [](char c) {return std::isdigit(c) != 0;});
 }
 
 bool get_error(int argc, char const *argv[]) {
     if (argc != 2) {
-        std::cerr<<"1 arguments pour le nombre de balles"<<std::endl;
+        std::cerr<<"Usage : ./{name} <Balls number>"<<std::endl;
         return true;
     }
-    if (!str_is_num(argv[1])) {
+    if (!str_is_num(std::string_view(argv[1]))) {
+        std::cerr<<"Invalid balls number"<<std::endl;
         return true;
     }
     return false;

@@ -13,20 +13,20 @@
 #include "destroy.h"
 
 int main_game(char const *ball_number_str) {
-    srandom(time(NULL));
+    srandom(time(nullptr));
     const int ball_number = std::stoi(ball_number_str);
-
     GameValue *game_value = init(ball_number);
 
     while (WIN->isOpen()) {
-        sf::Event event;
+        sf::Event event{};
         while (WIN->pollEvent(event)) {
-            if (event.type == sf::Event::Closed || (
-                    sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl)))
+            if (event.type == sf::Event::Closed
+            || (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl)))
                 WIN->close();
         }
         core(game_value, ball_number);
         draw(game_value, ball_number);
     }
+    destroy(game_value, ball_number);
     return EXIT_SUCCESS;
 }

@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2023
+** cpp_sfml
+** File description:
+** draw.cpp
+*/
+
 #include "draw.h"
 
 void draw(GameValue *game_value, int ball_number) {
