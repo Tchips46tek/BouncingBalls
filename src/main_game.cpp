@@ -14,8 +14,7 @@
 
 int main_game(char const *ball_number_str) {
     srandom(time(nullptr));
-    const int ball_number = std::stoi(ball_number_str);
-    GameValue *game_value = init(ball_number);
+    GameValue *game_value = init(ball_number_str);
 
     while (WIN->isOpen()) {
         sf::Event event{};
@@ -24,9 +23,9 @@ int main_game(char const *ball_number_str) {
             || (sf::Keyboard::isKeyPressed(sf::Keyboard::Q) && sf::Keyboard::isKeyPressed(sf::Keyboard::LControl)))
                 WIN->close();
         }
-        core(game_value, ball_number);
-        draw(game_value, ball_number);
+        core(game_value);
+        draw(game_value);
     }
-    destroy(game_value, ball_number);
+    destroy(game_value);
     return EXIT_SUCCESS;
 }

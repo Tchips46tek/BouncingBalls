@@ -16,10 +16,8 @@
 
 class GameValue {
     public:
-    sf::RenderWindow *window {
-    };
-    MovingShape *balls {
-    };
+    sf::RenderWindow *window;
+    std::vector<MovingShape*> balls;
     sf::Clock gravity_clock;
 };
 

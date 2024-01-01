@@ -10,6 +10,6 @@
 
     #include "game_value.h"
 
-GameValue *init(int ball_number);
+GameValue *init(char const *ball_number);
 
 #endif //INIT_H

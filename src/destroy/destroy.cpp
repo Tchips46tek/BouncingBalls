@@ -7,6 +7,6 @@
 
 #include "destroy.h"
 
-void destroy(GameValue *game_value, int ball_number) {
+void destroy(GameValue *game_value) {
     WIN->~RenderWindow();
 }

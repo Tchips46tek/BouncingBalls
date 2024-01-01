@@ -10,6 +10,6 @@
 
     #include "game_value.h"
 
-void core(GameValue *game_value, int ball_number);
+void core(GameValue *game_value);
 
 #endif //CORE_H

@@ -10,6 +10,6 @@
 
     #include "game_value.h"
 
-void draw(GameValue *game_value, int ball_number);
+void draw(GameValue *game_value);
 
 #endif //DRAW_H
